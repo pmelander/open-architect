@@ -1,0 +1,61 @@
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.bak
+
+# Generated documentation (can be regenerated)
+# Note: Project's own ADRs (ADR-001-*.md etc) are tracked
+# User-generated ADRs can be excluded with: docs/adr/ADR-*-user-*.md
+docs/architecture/*.md
+!docs/architecture/.gitkeep
+docs/deployment/*.md
+!docs/deployment/.gitkeep
+docs/operations/*.md
+!docs/operations/.gitkeep
+docs/reviews/*.md
+!docs/reviews/.gitkeep
+docs/technology/*.md
+!docs/technology/.gitkeep
+
+# Node modules (if we add tooling later)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Python (if we add tooling later)
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
+# Keep example files
+!examples/**/*.md
+
+# Keep template files
+!templates/**/*.md
+
+# Local configuration
+.env
+.env.local
+settings.local.json
+
+# Build outputs (if we add build process)
+dist/
+build/
+*.zip
+*.tar.gz

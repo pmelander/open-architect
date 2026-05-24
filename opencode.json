@@ -1,0 +1,45 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": ["AGENTS.md"],
+  "skills": {
+    "paths": ["./skills"]
+  },
+  "command": {
+    "journey": {
+      "description": "Start, resume, or check the health of an architectural journey",
+      "prompt": "First, check whether docs/journey/journey-state.md exists and read it if it does. If a journey is already in progress, summarize current status and ask what to do next (continue, iterate stressor loop, review health, or establish cadence). If no state file exists, ask: What is the engagement — a new greenfield design, an existing brownfield system, or a live system you need to evolve? Then follow the journey skill workflow."
+    },
+    "discover": {
+      "description": "Map paths, actors, and intentions of an existing system",
+      "prompt": "Use the discover skill. Ask the user: What would you like to discover — system paths, a specific actor's behaviour, how an intention propagates through the system, confidence gaps, or organisational resistance?"
+    },
+    "stressor": {
+      "description": "Run stressor analysis or apply a compliance pack to an architectural path",
+      "prompt": "Use the stressor skill. Ask: Would you like to walk a specific path (evaluating each actor in sequence), run a full stressor analysis to build an impact matrix, or inject a compliance pack such as GDPR? If walking a path, ask which path to start with."
+    },
+    "adr": {
+      "description": "Create an Architecture Decision Record",
+      "prompt": "Use the adr skill to create a new ADR. Ask for the decision title if not provided, then guide through context, options considered, decision made, and consequences."
+    },
+    "design-review": {
+      "description": "Run a systematic pre-production design review",
+      "prompt": "Use the design-review skill to conduct a thorough design review. Ask the user to describe the solution or share the design document, then work through the complete review checklist."
+    },
+    "solution-doc": {
+      "description": "Generate architecture documentation — HLD, LLD, runbook, or deployment guide",
+      "prompt": "Use the solution-doc skill. Ask which document type is needed: High-Level Design (HLD), Low-Level Design (LLD), deployment guide, or runbook. Then gather the required information and generate the document."
+    },
+    "tech-stack": {
+      "description": "Evaluate technology options and recommend a stack",
+      "prompt": "Use the tech-stack skill to systematically evaluate technology options. Ask the user to describe the problem context, constraints, and any options already under consideration, then run the evaluation framework."
+    },
+    "cloud": {
+      "description": "Design cloud architecture or generate IaC (Terraform, CloudFormation, Bicep, CDK)",
+      "prompt": "Use the cloud skill. Ask which cloud provider (AWS, Azure, GCP) and what is needed: a cloud architecture design, IaC code generation, a Well-Architected review, cost analysis, a migration plan, or a disaster recovery design."
+    },
+    "capacity": {
+      "description": "Estimate capacity, design scaling strategy, or size infrastructure",
+      "prompt": "Use the capacity skill. Ask what is needed: capacity estimation, a scaling strategy design, bottleneck analysis, load test planning, growth forecasting, or right-sizing existing infrastructure."
+    }
+  }
+}

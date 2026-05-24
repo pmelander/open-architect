@@ -1,8 +1,8 @@
-# Residual Architecture Skill Set - Roadmap
+# Open Architect - Roadmap
 
 ## Overview
 
-This roadmap outlines the planned development of the Residual Architecture Skill Set across three phases, designed to progressively enhance Solution Architect capabilities with OpenCode.
+This roadmap outlines the planned development of Open Architect across three phases, designed to progressively enhance Solution Architect capabilities with OpenCode.
 
 ## Status Legend
 
@@ -566,4 +566,4 @@ For roadmap questions or suggestions:
 - Start a discussion
 - Contact maintainers
 
-**Let's build the best Residual Architecture skill set together!** 🚀
+**Let's build the best Open Architect toolkit together!**

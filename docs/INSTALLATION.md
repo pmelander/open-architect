@@ -1,6 +1,6 @@
 # Installation Guide
 
-This guide explains how to install the Residual Architecture Skill Set for OpenCode.
+This guide explains how to install Open Architect for OpenCode.
 
 ---
 
@@ -9,14 +9,14 @@ This guide explains how to install the Residual Architecture Skill Set for OpenC
 The simplest approach. When you open this repository in OpenCode, `opencode.json` configures all 14 slash commands automatically — no copying required.
 
 ```bash
-git clone <repository-url> residual-architect
-cd residual-architect
+git clone <repository-url> open-architect
+cd open-architect
 
 # Only required for the /excel command:
 pip install -r requirements.txt
 ```
 
-Open the `residual-architect` directory in OpenCode. Type `/` to confirm commands are loaded.
+Open the `open-architect` directory in OpenCode. Type `/` to confirm commands are loaded.
 
 ---
 
@@ -70,8 +70,7 @@ If `/excel` commands fail, verify Python is in your PATH and openpyxl is install
 ## Updating
 
 ```bash
-cd residual-architect
-git pull origin main
+cd open-architect
 
 # If using Option B (direct copy):
 cp commands/* ~/.config/opencode/commands/

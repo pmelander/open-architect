@@ -1,4 +1,4 @@
-# Residual Architecture Skill Set for OpenCode
+# Open Architect for OpenCode
 
 A collection of OpenCode custom commands built on **Residuality Theory** — designed to build antifragile systems thinking and Solution Architect capabilities that compound over time.
 
@@ -65,8 +65,8 @@ You keep iterating until the system's vulnerability is sufficiently low — not 
 ## ⚡ Install
 
 ```bash
-git clone <repo-url> residual-architect
-cd residual-architect
+git clone <repo-url> open-architect
+cd open-architect
 
 # Option A — open in OpenCode (commands load automatically via opencode.json)
 # No copy needed. Only required for /excel:
@@ -154,4 +154,4 @@ See [Contributing Guide](CONTRIBUTING.md) for details.
 
 ---
 
-**Built with ❤️ for Solution Architects using OpenCode**
+**Built with for Solution Architects using OpenCode**

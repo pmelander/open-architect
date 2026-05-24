@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Excel/CSV Reader Utility for Residual Architecture Skill Set
+Excel/CSV Reader Utility for Open Architect
 
 Reads Excel (.xlsx, .xls) and CSV files and outputs markdown tables.
-Used by the excel-reader skill in skills/utilities/
+Used by the /excel command.
 
 Usage:
     python read_spreadsheet.py <file> [--sheet <name>] [--rows <max>] [--list-sheets]

@@ -1,4 +1,4 @@
-# Getting Started with Residual Architecture Skill Set
+# Getting Started with Open Architect
 
 Welcome! This guide will get you up and running in under 5 minutes.
 
@@ -8,8 +8,8 @@ Welcome! This guide will get you up and running in under 5 minutes.
 
 **Option A — open this repo in OpenCode (recommended):**
 ```bash
-git clone <repository-url> residual-architect
-cd residual-architect
+git clone <repository-url> open-architect
+cd open-architect
 pip install -r requirements.txt   # only needed for /excel
 ```
 Open the directory in OpenCode — all 14 slash commands load automatically via `opencode.json`.
@@ -18,16 +18,16 @@ Open the directory in OpenCode — all 14 slash commands load automatically via 
 
 Linux/macOS:
 ```bash
-git clone <repository-url> residual-architect
-cd residual-architect
+git clone <repository-url> open-architect
+cd open-architect
 cp commands/* ~/.config/opencode/commands/
 pip install -r requirements.txt
 ```
 
 Windows:
 ```powershell
-git clone <repository-url> residual-architect
-cd residual-architect
+git clone <repository-url> open-architect
+cd open-architect
 Copy-Item -Path "commands\*" -Destination "$env:USERPROFILE\.config\opencode\commands\"
 pip install -r requirements.txt
 ```

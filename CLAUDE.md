@@ -4,7 +4,7 @@ This file provides guidance to AI agents (OpenCode, Claude Code) when working wi
 
 ## Project Overview
 
-This is the **Residual Architecture Skill Set** — a comprehensive collection of OpenCode custom commands built on **Residuality Theory**, designed to build antifragile systems thinking and Solution Architect capabilities that compound over time.
+This is the **Open Architect** toolkit — a comprehensive collection of OpenCode custom commands built on **Residuality Theory**, designed to build antifragile systems thinking and Solution Architect capabilities that compound over time.
 
 ## Architecture
 

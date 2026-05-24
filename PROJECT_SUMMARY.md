@@ -1,8 +1,8 @@
-# Residual Architecture Skill Set — Project Summary
+# Open Architect — Project Summary
 
 ## Overview
 
-The **Residual Architecture Skill Set** is a collection of OpenCode custom commands built on **Residuality Theory** — designed to build antifragile systems thinking and Solution Architect capabilities that compound over time.
+The **Open Architect** toolkit is a collection of OpenCode custom commands built on **Residuality Theory** — designed to build antifragile systems thinking and Solution Architect capabilities that compound over time.
 
 **Philosophy:** Commands transfer capability to architects, not create dependency on tools. The measure of success is how rarely you need the toolkit, because the thinking has been internalised.
 
@@ -13,7 +13,7 @@ The **Residual Architecture Skill Set** is a collection of OpenCode custom comma
 ## Project Structure
 
 ```
-residual-architect/
+open-architect/
 ├── README.md
 ├── CLAUDE.md                       # Development guide
 ├── QUICKREF.md                     # All commands at a glance

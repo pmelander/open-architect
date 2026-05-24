@@ -1,4 +1,4 @@
-# Residual Architecture Skill Set - Quick Reference
+# Open Architect - Quick Reference
 
 ## Installation
 
@@ -7,8 +7,8 @@
 pip install -r requirements.txt   # only needed for /excel
 
 # Option B — install globally for OpenCode
-git clone <repo-url> residual-architect
-cd residual-architect
+git clone <repo-url> open-architect
+cd open-architect
 cp commands/* ~/.config/opencode/commands/
 pip install -r requirements.txt
 ```

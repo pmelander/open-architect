@@ -1,4 +1,4 @@
-# Contributing to Residual Architecture Skill Set
+# Contributing to Open Architect
 
 Thank you for your interest in contributing! This toolkit is designed to evolve with the needs of Solution Architects using OpenCode.
 
@@ -27,7 +27,7 @@ Thank you for your interest in contributing! This toolkit is designed to evolve 
 ```bash
 # Fork and clone the repository
 git clone <your-fork-url>
-cd residual-architect
+cd open-architect
 
 # Create a feature branch
 git checkout -b feature/your-feature-name

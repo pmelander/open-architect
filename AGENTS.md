@@ -5,7 +5,7 @@ Authoritative instruction source is `CLAUDE.md` — read it before working on sk
 ## Repo layout
 
 ```
-residual-architect/          ← git root (git@github.com:pmelander/residual-architect.git)
+open-architect/              ← git root (git@github.com:pmelander/open-architect.git)
 ├── opencode.json            ← OpenCode config: 14 custom slash commands
 ├── commands/<name>.md       ← 14 command templates (one per slash command)
 ├── commands/compliance-packs/ ← Regulatory stressor packs (gdpr.md etc.)

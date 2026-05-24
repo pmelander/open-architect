@@ -150,12 +150,12 @@ Phase 1 provides Solution Architects with:
 
 **Commands:**
 ```bash
-/team-capability assess         # Assess team capability maturity
-/team-capability gaps           # Identify capability gaps
-/team-capability roadmap        # Generate development roadmap
-/team-capability track          # Track growth over time
-/team-capability exercises      # Suggest capability-building exercises
-/team-capability compare        # Compare against benchmarks
+/capability-assessor assess      # Assess team capability maturity
+/capability-assessor gaps        # Identify capability gaps
+/capability-assessor roadmap     # Generate development roadmap
+/capability-assessor track       # Track growth over time
+/capability-assessor exercises   # Suggest capability-building exercises
+/capability-assessor compare     # Compare against benchmarks
 ```
 
 **Capability Dimensions:**

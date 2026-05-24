@@ -326,7 +326,7 @@ Compliance is handled through the stressor analysis skill — not a separate che
 /adr create [document residuals as architectural decisions]
 ```
 
-**Available packs:** See `skills/stressor/compliance-packs/` — contributions welcome.
+**Available packs:** See `commands/compliance-packs/` — contributions welcome.
 
 ---
 

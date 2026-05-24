@@ -6,35 +6,32 @@ Authoritative instruction source is `CLAUDE.md` — read it before working on sk
 
 ```
 residual-architect/          ← git root (git@github.com:pmelander/residual-architect.git)
-├── opencode.json            ← OpenCode config: skills path, slash commands, instructions
-├── skills/<name>/SKILL.md  ← 14 OpenCode/Claude Code skills (dual-compatible)
-├── skills/stressor/compliance-packs/
+├── opencode.json            ← OpenCode config: 14 custom slash commands
+├── commands/<name>.md       ← 14 command templates (one per slash command)
+├── commands/compliance-packs/ ← Regulatory stressor packs (gdpr.md etc.)
 ├── templates/               ← Markdown document templates
 ├── helpers/read_spreadsheet.py
 ├── docs/adr/                ← 7 ADRs documenting toolkit design decisions
 ├── docs/journey/            ← runtime-generated journey state files (never delete)
-└── requirements.txt         ← openpyxl only; needed for the excel skill
+└── requirements.txt         ← openpyxl only; needed for the /excel command
 ```
 
-No build system, no test runner, no linter, no CI. "Testing" a skill means installing it and exercising it in OpenCode or Claude Code.
+No build system, no test runner, no linter, no CI. "Testing" a command means opening the project in OpenCode and exercising the slash command.
 
 ## OpenCode install / setup
 
 ```bash
-# Option A — open this repo directly in OpenCode
-# opencode.json configures skills automatically; no copy needed.
-# Only required for the excel skill:
+# Option A — open this repo directly in OpenCode (recommended)
+# opencode.json configures all 14 commands automatically; no copy needed.
+# Only required for the /excel command:
 pip install -r requirements.txt
 
-# Option B — install skills globally (available in any project)
+# Option B — install commands globally (available in any project)
 # Linux / macOS
-cp -R skills/* ~/.config/opencode/skills/
+cp commands/* ~/.config/opencode/commands/
 
 # Windows PowerShell
-Copy-Item -Recurse -Path "skills\*" -Destination "$env:APPDATA\..\Local\opencode\skills\"
-
-# Option C — OpenCode also auto-loads from the Claude Code path
-cp -R skills/* ~/.claude/skills/
+Copy-Item -Path "commands\*" -Destination "$env:USERPROFILE\.config\opencode\commands\"
 ```
 
 After any config change, restart OpenCode — it reads config only at startup.
@@ -54,36 +51,41 @@ These commands are available when the project is open in OpenCode:
 | `/tech-stack` | Evaluate and recommend a technology stack |
 | `/cloud` | Design cloud architecture or generate IaC |
 | `/capacity` | Estimate capacity or design a scaling strategy |
+| `/arch-learning` | Analyze ADRs and architectural decisions for patterns |
+| `/capability-assessor` | Assess team architectural capability maturity |
+| `/patterns` | Extract and catalog architectural patterns |
+| `/evolve` | Coach teams in evolutionary architecture |
+| `/excel` | Read Excel/CSV files for architecture analysis |
 
-The remaining skills (`arch-learning`, `capability-assessor`, `patterns`, `evolve`, `excel`) are loaded automatically when their descriptions match the task — invoke them with natural language.
+## Command file frontmatter (OpenCode format)
 
-## Skill frontmatter (OpenCode format)
+Each `commands/<name>.md` file begins with YAML frontmatter. Recognized fields for command files:
 
 ```yaml
 ---
-name: skill-name          # required; lowercase hyphen-separated; matches folder name
-description: ...          # required; cover what AND when; front-load trigger keywords
+name: command-name        # informational; the filename determines the command name
+description: ...          # shown in the TUI command picker; cover what AND when
 ---
 ```
 
-Do not include `model:` in skill frontmatter — model selection is an OpenCode agent-level concern, not a skill-level one.
+Optional fields supported by OpenCode command markdown files: `agent`, `model`, `subtask`. Do not include `model:` unless you want to pin a specific model for that command.
 
-## Adding a new skill — checklist
+## Adding a new command — checklist
 
-Skills live at `skills/<name>/SKILL.md`. A new skill MUST:
+Commands live at `commands/<name>.md` and must be registered in `opencode.json`. A new command MUST:
 
-1. Use OpenCode frontmatter: `name:` and `description:` (no `model:` field)
-2. Description must state both what the skill does AND when to trigger it (start with trigger keywords or "Use when...")
+1. Create `commands/<name>.md` with YAML frontmatter (`name:` and `description:`) and a detailed prompt body
+2. Description must state both what the command does AND when to trigger it (start with trigger keywords or "Use when...")
 3. Follow the 9-part body structure: Role Definition → Capability Being Built → Residuality Goal → Core Concept → Commands → Templates/Reference → Workflow → Reflection Prompts
-4. Have an ADR in `docs/adr/` for any significant design decision (including decisions *not* to build something)
-5. Update all four docs: `README.md`, `QUICKREF.md`, `GETTING_STARTED.md`, `CLAUDE.md`
-6. If it warrants a slash command, add an entry to `opencode.json` under `"command"`
+4. Register it in `opencode.json` under `"command"` with `"description"` and `"template": "{file:commands/<name>.md}"`
+5. Have an ADR in `docs/adr/` for any significant design decision (including decisions *not* to build something)
+6. Update all four docs: `README.md`, `QUICKREF.md`, `GETTING_STARTED.md`, `CLAUDE.md`
 
-Skills must build transferable thinking, not tool dependency.
+Commands must build transferable thinking, not tool dependency.
 
 ## Adding a compliance pack
 
-Create `skills/stressor/compliance-packs/<framework>.md`. Each stressor must be a concrete harm scenario (not a control statement). Include the regulation reference, explain the real harm, and list common residuals. See `gdpr.md` for the expected shape.
+Create `commands/compliance-packs/<framework>.md`. Each stressor must be a concrete harm scenario (not a control statement). Include the regulation reference, explain the real harm, and list common residuals. See `gdpr.md` for the expected shape.
 
 ## Hard constraints (backed by ADRs)
 
@@ -118,7 +120,7 @@ Branch: `main`
 Commit format: Conventional Commits — `feat:`, `fix:`, `docs:`, `refactor:`, `chore:`
 
 ```bash
-git checkout -b feature/skill-name
-git commit -m "feat: add skill-name skill"
-git push origin feature/skill-name
+git checkout -b feature/command-name
+git commit -m "feat: add command-name command"
+git push origin feature/command-name
 ```

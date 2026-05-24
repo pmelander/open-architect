@@ -12,7 +12,7 @@ git clone <repository-url> residual-architect
 cd residual-architect
 pip install -r requirements.txt   # only needed for /excel
 ```
-Open the directory in OpenCode — all skills and slash commands load automatically via `opencode.json`.
+Open the directory in OpenCode — all 14 slash commands load automatically via `opencode.json`.
 
 **Option B — install globally (available in any project):**
 
@@ -20,7 +20,7 @@ Linux/macOS:
 ```bash
 git clone <repository-url> residual-architect
 cd residual-architect
-cp -R skills/* ~/.config/opencode/skills/
+cp commands/* ~/.config/opencode/commands/
 pip install -r requirements.txt
 ```
 
@@ -28,19 +28,19 @@ Windows:
 ```powershell
 git clone <repository-url> residual-architect
 cd residual-architect
-Copy-Item -Recurse -Path "skills\*" -Destination "$env:APPDATA\..\Local\opencode\skills\"
+Copy-Item -Path "commands\*" -Destination "$env:USERPROFILE\.config\opencode\commands\"
 pip install -r requirements.txt
 ```
 
 > **Note:** Excel reading requires Python and openpyxl. If `/excel` commands fail, run: `pip install -r requirements.txt`
 
-> **Restart required:** OpenCode reads config and skills only at startup. Restart after any install.
+> **Restart required:** OpenCode reads config and commands only at startup. Restart after any install.
 
 ---
 
 ## Step 2: Verify
 
-Open OpenCode and type `/` — you should see:
+Open OpenCode and type `/` — you should see all 14 commands:
 
 **Orchestration & Discovery:**
 `/journey` `/discover`
@@ -66,15 +66,15 @@ Open OpenCode and type `/` — you should see:
 
 ## Step 3: Start Your Journey
 
-The first thing to do with any new engagement isn't to open a specific skill — it's to understand where you are and what the terrain demands.
+The first thing to do with any new engagement isn't to open a specific command — it's to understand where you are and what the terrain demands.
 
 ```
 /journey start
 ```
 
-Tell Claude about the system you're working on — what you're trying to achieve, what exists today, and any constraints. It will assess the terrain and map your recommended skill sequence from there.
+Tell OpenCode about the system you're working on — what you're trying to achieve, what exists today, and any constraints. It will assess the terrain and map your recommended command sequence from there.
 
-**New to Residuality Theory?** Read the [Introduction to Residuality Theory](RESIDUALITY.md) first — it explains the philosophy behind the toolkit and the vocabulary all the skills share.
+**New to Residuality Theory?** Read the [Introduction to Residuality Theory](RESIDUALITY.md) first — it explains the philosophy behind the toolkit and the vocabulary all the commands share.
 
 ---
 
@@ -241,7 +241,7 @@ docs/
 
 ## First Steps Checklist
 
-- [ ] Install and verify (`/` in OpenCode shows the skills)
+- [ ] Install and verify (`/` in OpenCode shows the commands)
 - [ ] Read [Introduction to Residuality Theory](RESIDUALITY.md)
 - [ ] Start your first journey (`/journey start`)
 - [ ] Walk your first path (`/stressor walk`)

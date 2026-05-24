@@ -335,11 +335,11 @@ The most successful tool is one that becomes less necessary as users internalize
 4. **Phase 2 Redesign** - New Phase 2 vision and rationale
 5. **Residuality Measurement Framework** - How to measure success
 
-### Skills (Refactored)
-1. **skills/adr/SKILL.md** - Decision-making capability
-2. **skills/solution-doc/SKILL.md** - Communication capability
-3. **skills/tech-stack/SKILL.md** - Strategic thinking capability
-4. **skills/design-review/SKILL.md** - Critical evaluation capability
+### Commands (Refactored)
+1. **commands/adr.md** - Decision-making capability
+2. **commands/solution-doc.md** - Communication capability
+3. **commands/tech-stack.md** - Strategic thinking capability
+4. **commands/design-review.md** - Critical evaluation capability
 
 ### Supporting Docs
 - **ROADMAP.md** - Updated with Phase 2 vision

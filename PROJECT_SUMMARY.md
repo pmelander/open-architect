@@ -2,9 +2,9 @@
 
 ## Overview
 
-The **Residual Architecture Skill Set** is a collection of OpenCode skills built on **Residuality Theory** — designed to build antifragile systems thinking and Solution Architect capabilities that compound over time.
+The **Residual Architecture Skill Set** is a collection of OpenCode custom commands built on **Residuality Theory** — designed to build antifragile systems thinking and Solution Architect capabilities that compound over time.
 
-**Philosophy:** Skills transfer capability to architects, not create dependency on tools. The measure of success is how rarely you need the toolkit, because the thinking has been internalised.
+**Philosophy:** Commands transfer capability to architects, not create dependency on tools. The measure of success is how rarely you need the toolkit, because the thinking has been internalised.
 
 **Current status:** All three phases complete.
 
@@ -13,45 +13,32 @@ The **Residual Architecture Skill Set** is a collection of OpenCode skills built
 ## Project Structure
 
 ```
-solution-architect-toolkit/
+residual-architect/
 ├── README.md
-├── CLAUDE.md                       # Development guide (this project's CLAUDE.md)
+├── CLAUDE.md                       # Development guide
 ├── QUICKREF.md                     # All commands at a glance
 ├── GETTING_STARTED.md              # New user guide
 ├── ROADMAP.md                      # Development history and future considerations
 ├── CONTRIBUTING.md
+├── opencode.json                   # OpenCode config: 14 custom slash commands
 │
-├── skills/
-│   ├── adr/
-│   │   └── SKILL.md
-│   ├── solution-doc/
-│   │   └── SKILL.md
-│   ├── tech-stack/
-│   │   └── SKILL.md
-│   ├── design-review/
-│   │   └── SKILL.md
-│   ├── stressor/
-│   │   ├── SKILL.md
-│   │   └── compliance-packs/
-│   │       └── gdpr.md
-│   ├── excel/
-│   │   └── SKILL.md
-│   ├── arch-learning/
-│   │   └── SKILL.md
-│   ├── capability-assessor/
-│   │   └── SKILL.md
-│   ├── patterns/
-│   │   └── SKILL.md
-│   ├── evolve/
-│   │   └── SKILL.md
-│   ├── cloud/
-│   │   └── SKILL.md
-│   ├── capacity/
-│   │   └── SKILL.md
-│   ├── discover/
-│   │   └── SKILL.md
-│   └── journey/
-│       └── SKILL.md
+├── commands/                       # Command templates: commands/<name>.md
+│   ├── adr.md
+│   ├── solution-doc.md
+│   ├── tech-stack.md
+│   ├── design-review.md
+│   ├── stressor.md
+│   ├── compliance-packs/
+│   │   └── gdpr.md
+│   ├── excel.md
+│   ├── arch-learning.md
+│   ├── capability-assessor.md
+│   ├── patterns.md
+│   ├── evolve.md
+│   ├── cloud.md
+│   ├── capacity.md
+│   ├── discover.md
+│   └── journey.md
 │
 ├── templates/                      # Document templates
 ├── examples/                       # Example outputs
@@ -161,9 +148,9 @@ ADR-006 and ADR-007 are particularly important: they show the toolkit's philosop
 
 The most valuable open contribution area is **compliance packs** — curated stressor sets for GDPR, HIPAA, PCI DSS, ISO 27001, and SOC 2. These require regulatory expertise and make the toolkit immediately useful for compliance-heavy organisations without compromising its philosophical consistency.
 
-See `skills/stressor/compliance-packs/README.md` for the pack structure.
+See `commands/compliance-packs/` for the pack structure.
 
-Other contributions: new Phase 4 skills, examples, template refinements. See [CONTRIBUTING.md](../CONTRIBUTING.md).
+Other contributions: new Phase 4 commands, examples, template refinements. See [CONTRIBUTING.md](../CONTRIBUTING.md).
 
 ---
 
@@ -176,4 +163,4 @@ Phase 4 ideas (under consideration, no timeline):
 - **Integration Architect** — event-driven architecture, message queue design
 - **Data Architect** — data modelling, governance, data lake design
 
-Any new skill must align with Residuality Theory — if it trains architects to think in checklists or registers rather than antifragility, a different approach is needed.
+Any new command must align with Residuality Theory — if it trains architects to think in checklists or registers rather than antifragility, a different approach is needed.

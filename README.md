@@ -1,6 +1,6 @@
 # Residual Architecture Skill Set for OpenCode
 
-A collection of OpenCode skills built on **Residuality Theory** — designed to build antifragile systems thinking and Solution Architect capabilities that compound over time.
+A collection of OpenCode custom commands built on **Residuality Theory** — designed to build antifragile systems thinking and Solution Architect capabilities that compound over time.
 
 > **Philosophy:** Skills are designed to transfer capability to architects, not create dependency on tools. The measure of success is how little you need them.
 
@@ -22,7 +22,7 @@ The first thing to do with any new engagement isn't to open a specific skill —
 /journey start
 ```
 
-Tell Claude about the system you're working on — what you're trying to achieve, what exists today, and any constraints. It will assess the terrain and map your recommended skill sequence from there.
+Tell OpenCode about the system you're working on — what you're trying to achieve, what exists today, and any constraints. It will assess the terrain and map your recommended command sequence from there.
 
 The journey looks different depending on the terrain:
 
@@ -46,7 +46,7 @@ You keep iterating until the system's vulnerability is sufficiently low — not 
 
 ## Skills
 
-14 skills spanning the full architectural journey:
+14 commands spanning the full architectural journey:
 
 | Category | Skills |
 |----------|--------|
@@ -68,20 +68,18 @@ You keep iterating until the system's vulnerability is sufficiently low — not 
 git clone <repo-url> residual-architect
 cd residual-architect
 
-# Option A — open in OpenCode (skills load automatically via opencode.json)
+# Option A — open in OpenCode (commands load automatically via opencode.json)
 # No copy needed. Only required for /excel:
 pip install -r requirements.txt
 
-# Option B — install skills globally for OpenCode
-cp -R skills/* ~/.config/opencode/skills/
+# Option B — install commands globally for OpenCode (available in any project)
+cp commands/* ~/.config/opencode/commands/
 
 # Option C — Windows PowerShell (global install)
-Copy-Item -Recurse -Path "skills\*" -Destination "$env:APPDATA\..\Local\opencode\skills\"
+Copy-Item -Path "commands\*" -Destination "$env:USERPROFILE\.config\opencode\commands\"
 ```
 
-Open OpenCode and type `/` to see your skills.
-
-📖 See [Installation Guide](docs/INSTALLATION.md) for all options and troubleshooting.
+Open OpenCode and type `/` to see your commands.
 
 ---
 
@@ -89,39 +87,24 @@ Open OpenCode and type `/` to see your skills.
 
 ```
 .
-├── opencode.json                       # OpenCode config: skills path, slash commands
-├── skills/                             # Skills: skills/<name>/SKILL.md
-│   ├── adr/
-│   │   └── SKILL.md
-│   ├── solution-doc/
-│   │   └── SKILL.md
-│   ├── tech-stack/
-│   │   └── SKILL.md
-│   ├── design-review/
-│   │   └── SKILL.md
-│   ├── stressor/
-│   │   ├── SKILL.md
-│   │   └── compliance-packs/       # Regulatory stressor packs
-│   │       ├── README.md
-│   │       └── gdpr.md
-│   ├── excel/
-│   │   └── SKILL.md
-│   ├── arch-learning/
-│   │   └── SKILL.md
-│   ├── capability-assessor/
-│   │   └── SKILL.md
-│   ├── patterns/
-│   │   └── SKILL.md
-│   ├── evolve/
-│   │   └── SKILL.md
-│   ├── cloud/
-│   │   └── SKILL.md
-│   ├── capacity/
-│   │   └── SKILL.md
-│   ├── discover/
-│   │   └── SKILL.md
-│   └── journey/
-│       └── SKILL.md
+├── opencode.json                       # OpenCode config: 14 custom slash commands
+├── commands/                           # Command templates: commands/<name>.md
+│   ├── adr.md
+│   ├── solution-doc.md
+│   ├── tech-stack.md
+│   ├── design-review.md
+│   ├── stressor.md
+│   ├── compliance-packs/           # Regulatory stressor packs
+│   │   └── gdpr.md
+│   ├── excel.md
+│   ├── arch-learning.md
+│   ├── capability-assessor.md
+│   ├── patterns.md
+│   ├── evolve.md
+│   ├── cloud.md
+│   ├── capacity.md
+│   ├── discover.md
+│   └── journey.md
 ├── templates/                          # Document templates
 ├── examples/                           # Example outputs
 ├── helpers/                            # Python utilities (Excel reading)
@@ -151,8 +134,8 @@ See [Roadmap](ROADMAP.md) for future considerations.
 ## 🤝 Contributing
 
 Contributions welcome — especially:
-- 📋 **Compliance packs** for regulatory frameworks (GDPR, HIPAA, PCI DSS, ISO 27001, SOC 2) — see `skills/stressor/compliance-packs/README.md`
-- 💡 **New skill ideas** that align with Residuality Theory
+- 📋 **Compliance packs** for regulatory frameworks (GDPR, HIPAA, PCI DSS, ISO 27001, SOC 2) — see `commands/compliance-packs/`
+- 💡 **New command ideas** that align with Residuality Theory
 - 📝 **Documentation improvements**
 - 🐛 **Bug fixes and refinements**
 

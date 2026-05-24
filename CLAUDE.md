@@ -4,7 +4,7 @@ This file provides guidance to AI agents (OpenCode, Claude Code) when working wi
 
 ## Project Overview
 
-This is the **Residual Architecture Skill Set** — a comprehensive collection of OpenCode skills built on **Residuality Theory**, designed to build antifragile systems thinking and Solution Architect capabilities that compound over time.
+This is the **Residual Architecture Skill Set** — a comprehensive collection of OpenCode custom commands built on **Residuality Theory**, designed to build antifragile systems thinking and Solution Architect capabilities that compound over time.
 
 ## Architecture
 
@@ -12,38 +12,24 @@ This is the **Residual Architecture Skill Set** — a comprehensive collection o
 
 ```
 .
-├── skills/                             # OpenCode/Claude Code layout: skills/<name>/SKILL.md
-│   ├── adr/
-│   │   └── SKILL.md                    # /adr
-│   ├── solution-doc/
-│   │   └── SKILL.md                    # /solution-doc
-│   ├── tech-stack/
-│   │   └── SKILL.md                    # /tech-stack
-│   ├── design-review/
-│   │   └── SKILL.md                    # /design-review
-│   ├── stressor/
-│   │   ├── SKILL.md                    # /stressor
-│   │   └── compliance-packs/           # Regulatory stressor packs
-│   │       ├── README.md
-│   │       └── gdpr.md
-│   ├── excel/
-│   │   └── SKILL.md                    # /excel
-│   ├── arch-learning/
-│   │   └── SKILL.md                    # /arch-learning
-│   ├── capability-assessor/
-│   │   └── SKILL.md                    # /capability-assessor
-│   ├── patterns/
-│   │   └── SKILL.md                    # /patterns
-│   ├── evolve/
-│   │   └── SKILL.md                    # /evolve
-│   ├── cloud/
-│   │   └── SKILL.md                    # /cloud
-│   ├── capacity/
-│   │   └── SKILL.md                    # /capacity
-│   ├── discover/
-│   │   └── SKILL.md                    # /discover
-│   └── journey/
-│       └── SKILL.md                    # /journey
+├── opencode.json                       # OpenCode config: 14 custom slash commands
+├── commands/                           # Command templates: commands/<name>.md
+│   ├── adr.md                          # /adr
+│   ├── solution-doc.md                 # /solution-doc
+│   ├── tech-stack.md                   # /tech-stack
+│   ├── design-review.md                # /design-review
+│   ├── stressor.md                     # /stressor
+│   ├── compliance-packs/               # Regulatory stressor packs
+│   │   └── gdpr.md
+│   ├── excel.md                        # /excel
+│   ├── arch-learning.md                # /arch-learning
+│   ├── capability-assessor.md          # /capability-assessor
+│   ├── patterns.md                     # /patterns
+│   ├── evolve.md                       # /evolve
+│   ├── cloud.md                        # /cloud
+│   ├── capacity.md                     # /capacity
+│   ├── discover.md                     # /discover
+│   └── journey.md                      # /journey
 ├── helpers/
 │   └── read_spreadsheet.py             # Python helper for Excel reading
 ├── templates/                          # Document templates
@@ -76,52 +62,52 @@ This is the **Residual Architecture Skill Set** — a comprehensive collection o
     └── ...                             # Generated documentation location
 ```
 
-### Skill Development Pattern
+### Command Development Pattern
 
-Each skill follows this structure:
-1. **Frontmatter** — YAML with `name` (required, matches folder name) and `description` (what it does AND when to trigger it)
-2. **Role Definition** — clear statement of the skill's purpose
-3. **Capability Being Built** — what thinking the skill transfers to the architect
+Each command follows this structure:
+1. **Frontmatter** — YAML with `name` (informational) and `description` (what it does AND when to trigger it)
+2. **Role Definition** — clear statement of the command's purpose
+3. **Capability Being Built** — what thinking the command transfers to the architect
 4. **Residuality Goal** — what success looks like when the capability is internalised
 5. **Core Concept** — the key idea and compound effect
-6. **Commands** — slash commands with capability focus for each
+6. **Commands** — slash command variants with capability focus for each
 7. **Templates/Reference** — frameworks, patterns, and output formats
 8. **Workflow** — step-by-step process
 9. **Reflection Prompts** — questions that build the capability
 
 ### Key Design Principle
 
-Skills are **capability transfer tools**, not dependency-creating tools. Every skill should build thinking that architects carry forward independently. The measure of success is how rarely the skill needs to be invoked because the thinking has been internalised.
+Commands are **capability transfer tools**, not dependency-creating tools. Every command should build thinking that architects carry forward independently. The measure of success is how rarely the command needs to be invoked because the thinking has been internalised.
 
 ## Development Commands
 
-### Testing Skills
+### Testing Commands
 
 ```bash
-# View skill content
-cat skills/adr/SKILL.md
+# View command content
+cat commands/adr.md
 
-# Symlink for development (changes reflected immediately)
-ln -s "$(pwd)/skills/adr" ~/.config/opencode/skills/adr
+# Open the project directory in OpenCode — all commands load automatically via opencode.json
+# No symlinks or copies needed for development
 
-# Copy all for stable global use
-cp -R skills/* ~/.config/opencode/skills/
+# For global availability (optional), copy command files:
+cp commands/* ~/.config/opencode/commands/
 ```
 
-### Adding New Skills
+### Adding New Commands
 
-1. Create skill file at `skills/<name>/SKILL.md`
-2. Use OpenCode frontmatter: `name: <folder-name>` and `description:` (do not include `model:`)
-3. Description must state what the skill does AND when to trigger it — front-load keywords
-4. Follow the Skill Development Pattern above
-5. Document any significant design decisions as an ADR in `docs/adr/`
-6. Update `README.md`, `QUICKREF.md`, `GETTING_STARTED.md`, and `CLAUDE.md`
-7. If the skill warrants a slash command, add an entry to `opencode.json` under `"command"`
+1. Create command file at `commands/<name>.md`
+2. Use frontmatter: `name: <command-name>` and `description:` (do not include `model:`)
+3. Description must state what the command does AND when to trigger it — front-load keywords
+4. Follow the Command Development Pattern above
+5. Register it in `opencode.json` under `"command"` with `"description"` and `"template": "{file:commands/<name>.md}"`
+6. Document any significant design decisions as an ADR in `docs/adr/`
+7. Update `README.md`, `QUICKREF.md`, `GETTING_STARTED.md`, and `CLAUDE.md`
 
 ### Adding Compliance Packs
 
-1. Create `skills/stressor/compliance-packs/<framework>.md`
-2. Follow the pack structure defined in `skills/stressor/SKILL.md`
+1. Create `commands/compliance-packs/<framework>.md`
+2. Follow the pack structure defined in `commands/stressor.md`
 3. Each stressor must be a concrete scenario (not a control statement)
 4. Include regulation reference and explanation of the real harm
 5. List common residuals that emerge from the analysis
@@ -267,24 +253,20 @@ File-based persistence ensures journey continuity, enables handoffs, and creates
 ## Installation
 
 ```bash
-# Option A — open this repo in OpenCode (skills load automatically via opencode.json)
+# Option A — open this repo in OpenCode (commands load automatically via opencode.json)
 pip install -r requirements.txt   # only needed for /excel
 
-# Option B — install skills globally for OpenCode
-cp -R skills/* ~/.config/opencode/skills/
+# Option B — install commands globally for OpenCode
+cp commands/* ~/.config/opencode/commands/
 
-# Option C — Claude Code / OpenCode auto-load path
-cp -R skills/* ~/.claude/skills/
-pip install -r requirements.txt
-
-# Development (symlinks — changes reflected immediately)
-ln -s "$(pwd)/skills/adr" ~/.config/opencode/skills/adr   # repeat per skill
+# Windows PowerShell
+Copy-Item -Path "commands\*" -Destination "$env:USERPROFILE\.config\opencode\commands\"
 ```
 
-## Skills
+## Commands
 
-| Skill | Command | Category |
-|-------|---------|----------|
+| Command | Slash | Category |
+|---------|-------|----------|
 | Architect's Journey | `/journey` | Orchestration |
 | Environment Discovery | `/discover` | Discovery |
 | Architecture Decision Records | `/adr` | Individual |
@@ -302,8 +284,8 @@ ln -s "$(pwd)/skills/adr" ~/.config/opencode/skills/adr   # repeat per skill
 
 ## Contributing
 
-When adding new skills:
-1. Follow existing skill patterns — especially the Capability Being Built and Residuality Goal sections
+When adding new commands:
+1. Follow existing command patterns — especially the Capability Being Built and Residuality Goal sections
 2. Create an ADR in `docs/adr/` for any significant design decision (including decisions *not* to build something)
 3. Update all documentation files: README.md, QUICKREF.md, GETTING_STARTED.md, CLAUDE.md
 4. Test thoroughly before committing

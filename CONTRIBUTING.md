@@ -6,12 +6,12 @@ Thank you for your interest in contributing! This toolkit is designed to evolve 
 
 ### Types of Contributions
 
-1. **New Skills** - Add new architecture skills
-2. **Skill Improvements** - Enhance existing skills
+1. **New Commands** - Add new architecture commands
+2. **Command Improvements** - Enhance existing commands
 3. **Templates** - Add or improve document templates
 4. **Examples** - Provide real-world examples
 5. **Documentation** - Improve guides and docs
-6. **Bug Fixes** - Fix issues in skills or docs
+6. **Bug Fixes** - Fix issues in commands or docs
 
 ## Development Setup
 
@@ -32,28 +32,31 @@ cd residual-architect
 # Create a feature branch
 git checkout -b feature/your-feature-name
 
-# Install skills locally for testing (development symlinks)
-ln -s "$(pwd)/skills"/* ~/.config/opencode/skills/
+# Open the project directory in OpenCode — all commands load automatically
+# No install step needed for development (Option A)
+
+# For global availability during development, copy command files:
+cp commands/* ~/.config/opencode/commands/
 ```
 
-## Skill Development Guidelines
+## Command Development Guidelines
 
-### Skill Structure
+### Command Structure
 
-Every skill should follow this structure:
+Every command should follow this structure:
 
 ```markdown
 ---
-name: skill-name
-description: What this skill does and when to trigger it. Front-load trigger keywords.
+name: command-name
+description: What this command does and when to trigger it. Front-load trigger keywords.
 ---
 
-# Skill Name
+# Command Name
 
 You are an expert [role description]...
 
 ## Your Role
-[Clear description of the skill's purpose]
+[Clear description of the command's purpose]
 
 ## Commands
 [Available workflows and sub-commands]
@@ -68,7 +71,7 @@ You are an expert [role description]...
 [Step-by-step process]
 ```
 
-### Skill Best Practices
+### Command Best Practices
 
 1. **Clear Commands**: Define explicit slash commands
 2. **Ask Questions**: Gather context before generating
@@ -77,13 +80,13 @@ You are an expert [role description]...
 5. **Be Thorough**: Cover edge cases and alternatives
 6. **Consider Workflow**: Follow natural work patterns
 
-### Testing Your Skill
+### Testing Your Command
 
 Before submitting:
 
-1. **Test the skill in OpenCode**
+1. **Test the command in OpenCode**
    ```
-   /your-skill-name [test with various inputs]
+   /your-command-name [test with various inputs]
    ```
 
 2. **Verify output quality**
@@ -111,20 +114,20 @@ Before starting work, create an issue describing:
 
 ### 2. Develop Your Contribution
 
-**For New Skills:**
+**For New Commands:**
 
 ```bash
-# Create the skill directory and file
-mkdir -p skills/skill-name
-# Note: OpenCode expects skills/<name>/SKILL.md structure
-# Follow the skill structure template
+# Create the command file
+touch commands/command-name.md
+# Follow the command structure template above
 # Include frontmatter (name + description), commands, templates, etc.
+# Register in opencode.json under "command" with description and template path
 
 # Add example output
-mkdir examples/skill-name
-touch examples/skill-name/example-output.md
+mkdir examples/command-name
+touch examples/command-name/example-output.md
 
-# Update README.md, QUICKREF.md, GETTING_STARTED.md, and CLAUDE.md to list the new skill
+# Update README.md, QUICKREF.md, GETTING_STARTED.md, and CLAUDE.md to list the new command
 ```
 
 **For Improvements:**
@@ -135,7 +138,7 @@ touch examples/skill-name/example-output.md
 
 ### 3. Document Your Changes
 
-- Update `README.md` if adding new skill
+- Update `README.md` if adding new command
 - Update `CLAUDE.md` with any architectural changes
 - Add/update examples in `examples/`
 - Update `docs/USAGE.md` with usage instructions
@@ -232,16 +235,16 @@ common scenarios like technology comparison and migration planning.
 
 ### Review Criteria
 
-- ✅ Follows skill structure guidelines
+- ✅ Follows command structure guidelines
 - ✅ Includes proper documentation
 - ✅ Tested with OpenCode
-- ✅ Examples provided (for new skills)
+- ✅ Examples provided (for new commands)
 - ✅ Templates are well-formatted
 - ✅ Commit messages follow convention
 
-## Skill Guidelines
+## Command Guidelines
 
-When contributing a new skill, consider where it fits:
+When contributing a new command, consider where it fits:
 
 - **Widely applicable** — useful to any architect on any engagement (e.g. stressor analysis, ADRs)
 - **Deep analysis** — requires multiple steps or integrates with existing artefacts (e.g. capability assessment, pattern extraction)
@@ -251,11 +254,11 @@ When contributing a new skill, consider where it fits:
 
 ### README Updates
 
-When adding a skill, update README.md:
+When adding a command, update README.md:
 
 ```markdown
 ### Phase X: Category Name
-- ✅ `skill-name` - Brief description
+- ✅ `command-name` - Brief description
 ```
 
 ### CLAUDE.md Updates
@@ -333,4 +336,4 @@ Feel free to:
 - Start a discussion
 - Reach out to maintainers
 
-Thank you for helping make this toolkit better for all Solution Architects! 🎉
+Thank you for helping make this toolkit better for all Solution Architects!

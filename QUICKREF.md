@@ -3,13 +3,13 @@
 ## Installation
 
 ```bash
-# Option A — open this repo in OpenCode (skills load automatically)
+# Option A — open this repo in OpenCode (commands load automatically)
 pip install -r requirements.txt   # only needed for /excel
 
 # Option B — install globally for OpenCode
 git clone <repo-url> residual-architect
 cd residual-architect
-cp -R skills/* ~/.config/opencode/skills/
+cp commands/* ~/.config/opencode/commands/
 pip install -r requirements.txt
 ```
 
